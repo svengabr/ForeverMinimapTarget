@@ -1,0 +1,8 @@
+## Interface: 16001
+## Title: Forever Minimap Target
+## Notes: Adds "Target" and "Focus" back to the minimap tracking menu, so your target and focus can be shown on the minimap again.
+## Author: Ashtar Senior
+## Version: @project-version@
+## X-License: GPL-3.0-or-later
+
+ForeverMinimapTarget.lua
