@@ -40,5 +40,10 @@ Locally without a Lua install via Docker:
 ## Release
 
 Publishing is automatic via `.github/workflows/release.yml` (BigWigsMods/packager) to CurseForge and GitHub
-Releases, **only on tags** `v*`. A CurseForge project ID (`## X-Curse-Project-ID`) is not set yet; add it to the
-TOC once the project exists. Tags and pushes only after the maintainer approves.
+Releases (CurseForge project ID in the TOC), **only on tags** `v*`, never on a plain push.
+
+1. Add the new version to `CHANGELOG.md` and commit.
+2. Create an annotated tag `vX.Y.Z` and push it; that starts the upload.
+
+Don't replace `## Version: @project-version@` by hand, the packager sets it from the tag.
+Tags and pushes only after the maintainer approves.
