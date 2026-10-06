@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 840" width="800" height="840">
+  <defs>
+    <radialGradient id="land" cx="45%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#7c8a4a"/><stop offset=".6" stop-color="#55633a"/><stop offset="1" stop-color="#2f3a24"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2b56a"/><stop offset=".5" stop-color="#8a5a2b"/><stop offset="1" stop-color="#d9a35a"/>
+    </linearGradient>
+    <radialGradient id="glow" r="50%"><stop offset="0" stop-color="#ffd76a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd76a" stop-opacity="0"/></radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="5" seed="11"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .6 -.12"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="soil" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".008" numOctaves="3" seed="4"/>
+      <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .36  0 0 0 0 .2  0 0 0 2.2 -1.15"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <clipPath id="map"><circle cx="400" cy="400" r="330"/></clipPath>
+  </defs>
+  <ellipse cx="400" cy="780" rx="300" ry="26" fill="#000" opacity=".4"/>
+  <g clip-path="url(#map)">
+    <circle cx="400" cy="400" r="330" fill="url(#land)"/>
+    <rect x="60" y="60" width="680" height="680" fill="#000" filter="url(#soil)"/>
+    <rect x="60" y="60" width="680" height="680" fill="#000" filter="url(#grain)"/>
+    <path d="M40 560 C200 520 300 470 380 470 C500 470 560 380 780 330" fill="none" stroke="#c9b98a" stroke-opacity=".55" stroke-width="28" stroke-linecap="round"/>
+    <path d="M40 560 C200 520 300 470 380 470 C500 470 560 380 780 330" fill="none" stroke="#e6dab4" stroke-opacity=".3" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="400" cy="400" r="330" fill="none" stroke="#000" stroke-opacity=".5" stroke-width="70"/>
+  </g>
+  <circle cx="400" cy="400" r="346" fill="none" stroke="#2a1708" stroke-width="44"/>
+  <circle cx="400" cy="400" r="346" fill="none" stroke="url(#ring)" stroke-width="30"/>
+  <circle cx="400" cy="400" r="364" fill="none" stroke="#2a1708" stroke-width="4"/>
+  <path d="M352 66 L400 12 L448 66 Z" fill="url(#ring)" stroke="#2a1708" stroke-width="7" stroke-linejoin="round"/>
+
+  <!-- party member dots and a mailbox -->
+  <circle cx="300" cy="300" r="12" fill="#ff7eb6" stroke="#2a0c18" stroke-width="4"/>
+  <image href="icons/inv_letter_15.jpg" x="540" y="560" width="40" height="40" opacity=".85"/>
+
+  <!-- focus marker -->
+  <image href="focus.svg" x="200" y="520" width="64" height="64"/>
+
+  <!-- player arrow -->
+  <g transform="translate(380 470) rotate(68)">
+    <path d="M0 -40 L26 30 L0 16 L-26 30 Z" fill="#f2f4f8" stroke="#1d2230" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M0 -40 L0 16 L-26 30 Z" fill="#aab2c4"/>
+  </g>
+
+  <!-- target marker -->
+  <circle cx="530" cy="270" r="110" fill="url(#glow)"/>
+  <image href="target.svg" x="476" y="216" width="108" height="108"/>
+</svg>

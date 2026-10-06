@@ -1,0 +1,119 @@
+/* Shared look for the CurseForge gallery images (1920×1080), same frame as KeepOrSell. */
+@font-face {
+  /* Blizzard's font, extracted locally (fonts/ is git-ignored, see README.md) */
+  font-family: "Friz";
+  src: url("fonts/FRIZQT__.TTF");
+}
+
+:root {
+  --bg-1: #262a33;
+  --bg-2: #14161b;
+  --frame: #8a7449;
+  --gold: #ffd200;
+  --text: #e9e6df;
+  --muted: #a39f95;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 60% 75% at 72% 50%, rgba(124, 138, 74, 0.16), transparent 70%),
+    radial-gradient(ellipse at 30% 20%, var(--bg-1), var(--bg-2) 75%);
+}
+
+.frame {
+  position: absolute; inset: 28px;
+  border: 2px solid var(--frame);
+  border-radius: 28px;
+  box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.25), inset 0 0 120px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+.brand {
+  position: absolute; top: 72px; left: 96px;
+  display: flex; align-items: center; gap: 18px;
+  font-family: "Friz", serif; font-size: 34px; color: var(--gold);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+.brand img { width: 64px; height: 64px; }
+
+.copy {
+  position: absolute; left: 96px; top: 0; bottom: 0; width: 720px;
+  display: flex; flex-direction: column; justify-content: center; gap: 28px;
+}
+.chip {
+  align-self: flex-start;
+  font-family: "Friz", serif; font-size: 24px; letter-spacing: 0.04em;
+  padding: 8px 20px; border-radius: 999px;
+  border: 2px solid currentColor; background: rgba(0, 0, 0, 0.35);
+}
+.copy h1 {
+  font-family: "Friz", serif; font-weight: normal;
+  font-size: 68px; line-height: 1.12; color: #fff;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+.copy p { font-size: 30px; line-height: 1.5; color: var(--text); }
+.copy .note { font-size: 22px; color: var(--muted); }
+
+.stage {
+  position: absolute; left: 860px; right: 72px; top: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Minimap tracking menu, roughly 2× game size */
+.menu {
+  width: 600px; padding: 18px 26px 22px;
+  background: rgba(8, 8, 10, 0.88);
+  border: 2px solid #3d3b36; border-radius: 10px;
+  box-shadow: inset 0 0 0 1px #000, 0 24px 60px rgba(0, 0, 0, 0.7);
+  font-family: "Friz", serif; font-size: 30px; color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.9);
+}
+.menu .item { display: flex; align-items: center; height: 54px; gap: 18px; }
+.menu .item .label { flex: 1; }
+.menu .item img { width: 38px; height: 38px; border-radius: 6px; }
+.menu .item img.marker { border-radius: 0; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8)); }
+.menu .arrow { color: var(--gold); font-size: 26px; }
+.menu .box {
+  width: 30px; height: 30px; flex: none; border-radius: 4px;
+  background: #1b1b1f; border: 2px solid #4a4a50;
+  display: grid; place-items: center;
+}
+.menu .box.on { background: none; border-color: transparent; }
+.menu .box.on::after { content: "✔"; font: bold 34px/1 "Segoe UI Symbol", sans-serif; color: var(--gold); }
+.menu .divider { height: 3px; margin: 14px 0 12px; background: linear-gradient(90deg, #2c2b28, #55524a, #2c2b28); }
+.menu .new { box-shadow: 0 0 0 2px rgba(255, 210, 0, 0.55), 0 0 30px rgba(255, 210, 0, 0.25); border-radius: 8px; padding: 6px 12px; margin: 0 -12px; }
+
+/* Character list */
+.chars {
+  width: 820px; padding: 30px 40px 34px;
+  background: linear-gradient(180deg, rgba(22, 22, 26, 0.97), rgba(12, 12, 15, 0.97));
+  border: 3px solid #5d5a52; border-radius: 12px;
+  box-shadow: inset 0 0 0 2px #1a1a1a, 0 24px 60px rgba(0, 0, 0, 0.7);
+  font-family: "Friz", serif; color: #fff; text-shadow: 2px 2px 0 #000;
+}
+.chars h2 { font-weight: normal; font-size: 36px; color: var(--gold); padding-bottom: 14px; border-bottom: 2px solid #6b5a35; }
+.chars .head, .chars .row { display: grid; grid-template-columns: 1fr 150px 150px; align-items: center; }
+.chars .head { font-size: 24px; color: var(--muted); padding: 18px 0 6px; }
+.chars .head span:not(:first-child), .chars .row span:not(:first-child) { text-align: center; }
+.chars .row { height: 78px; font-size: 32px; border-top: 1px solid #2b2a27; }
+.chars .row small { display: block; font-size: 20px; color: var(--muted); }
+.chars .yes { color: var(--gold); font: bold 38px/1 "Segoe UI Symbol", sans-serif; }
+.chars .no { color: #5a5850; font-size: 34px; }
+.chars .footer { margin-top: 22px; font-size: 24px; color: var(--muted); }
+
+/* Small game tooltip over the minimap */
+.tip {
+  position: absolute; white-space: nowrap;
+  font-family: "Friz", serif; font-size: 34px; color: var(--gold);
+  padding: 10px 22px 12px;
+  background: linear-gradient(180deg, rgba(14, 16, 36, 0.96), rgba(6, 7, 18, 0.96));
+  border: 3px solid #9c9ca4; border-radius: 10px;
+  box-shadow: inset 0 0 0 2px #2b2b33, 0 0 0 2px #111, 0 16px 40px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.85);
+}
