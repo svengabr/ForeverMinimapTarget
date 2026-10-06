@@ -10,9 +10,11 @@ filters from `MinimapConstants.OPTIONAL_FILTERS` or with a spell ID, unless the 
 after launch, although `C_Minimap.SetTracking` still turns them on (verified in the client).
 
 The addon hooks the menu with `Menu.ModifyMenu` and appends a divider plus one checkbox per filter. Entries are
-looked up by `filterID` (the tracking index differs per class). State is read live from
-`C_Minimap.GetTrackingInfo`; the game saves it per character (`minimapTrackedInfov4`). With
-`minimapTrackingShowAll` on, nothing is added. Everything lives in `ForeverMinimapTarget.lua`.
+looked up by `filterID` (the tracking index differs per class). Checkboxes show the live state from
+`C_Minimap.GetTrackingInfo`. The game does not keep Target on across a relog (observed in the client), so the
+wanted state is saved in `ForeverMinimapTargetCharDB` (SavedVariablesPerCharacter; Target defaults to on, Focus is
+only touched once the player ticks it) and applied on every `PLAYER_ENTERING_WORLD` and again 3 s later. With
+`minimapTrackingShowAll` on, the addon adds nothing and enforces nothing. Everything lives in `ForeverMinimapTarget.lua`.
 
 Note: Blizzard's "Uncheck all" re-enables the Target filter (it is in `CONDITIONAL_FILTERS`). That is Blizzard
 behavior, not a bug here.

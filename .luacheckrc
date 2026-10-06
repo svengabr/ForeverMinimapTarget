@@ -4,9 +4,15 @@ std = "lua51"
 max_line_length = false
 exclude_files = { ".luacheckrc" }
 
+globals = {
+  "ForeverMinimapTargetCharDB",
+}
+
 read_globals = {
   "C_CVar",
   "C_Minimap",
+  "C_Timer",
+  "CreateFrame",
   "Enum",
   "Menu",
 }

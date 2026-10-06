@@ -6,9 +6,9 @@ The game still supports both, but the tracking menu only lists them when the ful
 
 ## Usage
 
-Click the tracking button at the minimap and tick **Target** and/or **Focus**. The game remembers the choice per character.
+Click the tracking button at the minimap and tick **Target** and/or **Focus**. The game does not keep these on across logins, so the addon saves your choice per character and sets it again after every loading screen. **Target** is on by default.
 
-If you have switched on the full tracking list (`/console minimapTrackingShowAll 1`), the game already lists both entries and the addon adds nothing.
+If you have switched on the full tracking list (`/console minimapTrackingShowAll 1`), the game already lists both entries and the addon does nothing.
 
 ## Install
 
