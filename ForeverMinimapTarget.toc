@@ -2,7 +2,13 @@
 ## Title: Forever Minimap Target
 ## Notes: Adds "Target" and "Focus" back to the minimap tracking menu, so your target and focus can be shown on the minimap again.
 ## Author: Ashtar Senior
-## Version: @project-version@
+#@debug@
+## Version: dev
+#@end-debug@
+#@non-debug@
+# ## Version: @project-version@
+#@end-non-debug@
+## IconTexture: Interface\AddOns\ForeverMinimapTarget\Icon
 ## SavedVariablesPerCharacter: ForeverMinimapTargetCharDB
 ## X-License: GPL-3.0-or-later
 ## X-Curse-Project-ID: 1730554

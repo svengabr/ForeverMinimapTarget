@@ -14,7 +14,8 @@ looked up by `filterID` (the tracking index differs per class). Checkboxes show 
 `C_Minimap.GetTrackingInfo`. The game does not keep Target on across a relog (observed in the client), so the
 wanted state is saved in `ForeverMinimapTargetCharDB` (SavedVariablesPerCharacter; Target defaults to on, Focus is
 only touched once the player ticks it) and applied on every `PLAYER_ENTERING_WORLD` and again 3 s later. With
-`minimapTrackingShowAll` on, the addon adds nothing and enforces nothing. Everything lives in `ForeverMinimapTarget.lua`.
+`minimapTrackingShowAll` on, the addon adds nothing and enforces nothing. Everything lives in `ForeverMinimapTarget.lua`;
+the addon list icon is `Icon.tga` (64×64, scaled down from `media/logo.png`).
 
 Note: Blizzard's "Uncheck all" re-enables the Target filter (it is in `CONDITIONAL_FILTERS`). That is Blizzard
 behavior, not a bug here.
@@ -45,5 +46,7 @@ Releases (CurseForge project ID in the TOC), **only on tags** `v*`, never on a p
 1. Add the new version to `CHANGELOG.md` and commit.
 2. Create an annotated tag `vX.Y.Z` and push it; that starts the upload.
 
-Don't replace `## Version: @project-version@` by hand, the packager sets it from the tag.
+Don't replace `## Version: @project-version@` by hand, the packager sets it from the tag. It sits in a `#@non-debug@`
+block so a source checkout shows `dev` instead of the raw placeholder; the packager drops the `#@debug@` line and
+uncomments the real one.
 Tags and pushes only after the maintainer approves.
