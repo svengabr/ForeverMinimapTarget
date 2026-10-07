@@ -1,14 +1,22 @@
 # Forever Minimap Target
 
+<img src="https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/main/media/logo.png" alt="ForeverMinimapTarget logo" width="128">
+
 A tiny addon for **World of Warcraft: Forever** that brings the **Target** and **Focus** entries back to the minimap tracking menu, so your current target and focus show up on the minimap again.
 
 The game still supports both, but the tracking menu only lists them when the full tracking list is switched on. This addon adds the two checkboxes to the normal menu, below the other entries.
+
+![Forever Minimap Target](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/main/media/gallery/01-overview.jpg)
 
 ## Usage
 
 Click the tracking button at the minimap and tick **Target** and/or **Focus**. The game does not keep these on across logins, so the addon saves your choice per character and sets it again after every loading screen. **Target** is on by default.
 
 If you have switched on the full tracking list (`/console minimapTrackingShowAll 1`), the game already lists both entries and the addon does nothing.
+
+![Tracking menu](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/main/media/gallery/02-menu.jpg)
+
+![Saved per character](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/main/media/gallery/03-saved.jpg)
 
 ## Install
 
