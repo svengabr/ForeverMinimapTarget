@@ -24,14 +24,6 @@ If you have switched on the full tracking list (`/console minimapTrackingShowAll
 2. Extract it so you have `World of Warcraft\_classic_beta_\Interface\AddOns\ForeverMinimapTarget`.
 3. Restart the game or type `/reload`.
 
-## Without the addon
-
-You can switch target tracking on once per character with:
-
-```
-/run for i=1,C_Minimap.GetNumTrackingTypes() do local f=C_Minimap.GetTrackingFilter(i) if f and f.filterID==Enum.MinimapTrackingFilter.Target then C_Minimap.SetTracking(i,true) end end
-```
-
 ## Support
 
 The addon is free and always will be. If it made your game a bit nicer, you can [buy me a coffee](https://buymeacoffee.com/conoar).
