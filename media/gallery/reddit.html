@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Forever Minimap Target – Reddit before/after</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=block">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Before/after image for the Reddit post, same layout as the Forever Loot Sparkles one.
+     Minimap built from the real Forever textures in assets/ (fetch-assets.py). */
+  body { background: #0f1218; }
+  .head {
+    position: absolute; top: 46px; left: 0; right: 0; text-align: center;
+    font-family: "Friz", serif; font-size: 56px; color: #fff; text-shadow: 0 3px 10px #000;
+  }
+  .head small { display: block; margin-top: 8px; font-family: "Inter", sans-serif; font-size: 28px; color: var(--muted); }
+  .panel {
+    position: absolute; top: 210px; bottom: 44px; width: 896px;
+    border: 4px solid #4a4f5e; border-radius: 6px; overflow: hidden;
+    background: radial-gradient(ellipse at 40% 35%, #262a33, #14161b 75%);
+  }
+  .panel.off { left: 44px; }
+  .panel.on { right: 44px; border-color: var(--gold); }
+  .label {
+    position: absolute; top: 22px; left: 22px; z-index: 5;
+    font: 800 46px/1 "Inter", sans-serif; padding: 12px 22px 14px; border-radius: 12px;
+    background: rgba(0, 0, 0, 0.75); color: #d6d8de;
+  }
+  .on .label { color: var(--gold); }
+
+  .mm { left: 262px; top: 470px; transform: scale(1.1); }
+
+  .panel .menu {
+    position: absolute; right: 22px; top: 250px; width: 352px; z-index: 4;
+    font-size: 25px; padding: 12px 20px 16px;
+  }
+  .panel .menu .item { height: 50px; }
+  .panel .menu .label-t { flex: 1; }
+  .panel .menu .item img { width: 34px; height: 34px; }
+  .missing {
+    margin-top: 14px; padding: 12px 0 2px; text-align: center;
+    font-family: "Inter", sans-serif; font-size: 24px; color: #8d8a82; text-shadow: none;
+    border-top: 2px dashed #3b3a36;
+  }
+</style>
+</head>
+<body>
+<div class="head">Forever Minimap Target<small>Target &amp; Focus Target back in the minimap tracking menu · kept on after relog</small></div>
+
+<template id="minimap">
+  <div class="mm">
+    <div class="map"></div>
+    <img class="frame-tex" src="assets/minimap-frame.png" alt="">
+    <img class="day" src="assets/minimap-day.png" alt="">
+    <div class="zone"><b>Northshire Valley</b><span>14:22</span></div>
+    <div class="btn tracking"><img src="assets/tracking.png" alt=""></div>
+    <div class="btn calendar"><img src="assets/calendar.png" alt=""></div>
+    <img class="mail" src="assets/mail.png" alt="">
+    <div class="coords">48.2, 41.7</div>
+  </div>
+</template>
+
+<div class="panel off">
+  <div class="label">Off</div>
+  <div class="slot"></div>
+  <div class="menu">
+    <div class="item"><span class="box on"></span><span class="label-t">Mailbox</span><img src="assets/menu-mailbox.png" alt=""></div>
+    <div class="item"><span class="box"></span><span class="label-t">Repair</span><img src="assets/menu-repair.png" alt=""></div>
+    <div class="item"><span class="box on"></span><span class="label-t">Find Herbs</span><img src="icons/inv_misc_flower_02.jpg" alt=""></div>
+    <div class="item"><span class="box on"></span><span class="label-t">Flight Master</span><img src="assets/menu-flightmaster.png" alt=""></div>
+    <div class="missing">no Target, no Focus</div>
+  </div>
+</div>
+
+<div class="panel on">
+  <div class="label">On</div>
+  <div class="slot">
+    <div class="blip hostile" style="left: -95px; top: -40px;"><img src="assets/blip-target.png" alt=""></div>
+    <div class="tip" style="left: -95px; top: -74px;">Kobold Laborer</div>
+    <div class="blip" style="left: 62px; top: 72px;"><img src="assets/blip-focus.png" alt=""></div>
+  </div>
+  <div class="menu">
+    <div class="item"><span class="box on"></span><span class="label-t">Mailbox</span><img src="assets/menu-mailbox.png" alt=""></div>
+    <div class="item"><span class="box"></span><span class="label-t">Repair</span><img src="assets/menu-repair.png" alt=""></div>
+    <div class="item"><span class="box on"></span><span class="label-t">Find Herbs</span><img src="icons/inv_misc_flower_02.jpg" alt=""></div>
+    <div class="item"><span class="box on"></span><span class="label-t">Flight Master</span><img src="assets/menu-flightmaster.png" alt=""></div>
+    <div class="divider"></div>
+    <div class="new">
+      <div class="item"><span class="box on"></span><span class="label-t">Target</span><img class="marker" src="assets/menu-target.png" alt=""></div>
+      <div class="item"><span class="box on"></span><span class="label-t">Focus Target</span><img class="marker" src="assets/menu-focus.png" alt=""></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Same minimap in both panels; blips from a panel's slot go on the map below the frame, tooltips on top
+  for (const slot of document.querySelectorAll(".slot")) {
+    const mm = document.getElementById("minimap").content.firstElementChild.cloneNode(true);
+    const player = Object.assign(document.createElement("img"), { className: "player", src: "assets/arrow-player.png", alt: "" });
+    const tips = [...slot.querySelectorAll(".tip")];
+    mm.querySelector(".frame-tex").before(...slot.querySelectorAll(".blip"), player);
+    mm.append(...tips);
+    slot.replaceWith(mm);
+  }
+</script>
+</body>
+</html>

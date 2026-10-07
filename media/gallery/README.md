@@ -14,3 +14,10 @@ Not in the repo (Blizzard assets, git-ignored), fetch them before rendering:
 - `fonts/FRIZQT__.TTF`: `curl -L -o fonts/FRIZQT__.TTF https://wago.tools/api/casc/615960`
 - `icons/<name>.jpg`: `curl -o icons/<name>.jpg https://wow.zamimg.com/images/wow/icons/large/<name>.jpg`
   for every `icons/…` referenced in the pages and in `minimap.svg`
+
+`01-overview.html` and `reddit.html` (before/after image for the Reddit post) rebuild the real WoW: Forever minimap
+from game textures (shared `.mm` styles in `style.css`). Fetch them into `assets/` (git-ignored) before rendering:
+
+```sh
+python fetch-assets.py
+```
