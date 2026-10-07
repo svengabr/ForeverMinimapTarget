@@ -6,7 +6,7 @@ A tiny addon for **World of Warcraft: Forever** that brings the **Target** and *
 
 The game still supports both, but the tracking menu only lists them when the full tracking list is switched on. This addon adds the two checkboxes to the normal menu, below the other entries.
 
-![Forever Minimap Target](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/main/media/gallery/01-overview.jpg)
+![Forever Minimap Target](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/main/media/gallery/01-overview.jpg?v=2)
 
 ## Usage
 
