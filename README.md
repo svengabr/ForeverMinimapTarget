@@ -2,28 +2,28 @@
 
 <img src="https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/refs/heads/main/media/logo.png" alt="ForeverMinimapTarget logo" width="128">
 
-A tiny addon for **World of Warcraft: Forever** that brings the **Target** and **Focus** entries back to the minimap tracking menu, so your current target and focus show up on the minimap again.
-
-The game still supports both, but the tracking menu only lists them when the full tracking list is switched on. This addon adds the two checkboxes to the normal menu, below the other entries.
+Puts **Target** and **Focus** back into the minimap tracking menu in **World of Warcraft: Forever**, so your target and focus show up on the minimap again.
 
 ![Forever Minimap Target](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/refs/heads/main/media/gallery/01-overview.jpg)
 
 ## Usage
 
-Click the tracking button at the minimap and tick **Target** and/or **Focus**. The game does not keep these on across logins, so the addon saves your choice per character and sets it again after every loading screen. **Target** is on by default.
+Click the tracking button at the minimap and tick **Target**, **Focus** or both. Target is on by default.
 
-If you have switched on the full tracking list (`/console minimapTrackingShowAll 1`), the game already lists both entries and the addon does nothing.
+The game forgets these at every login, so the addon saves your choice per character and sets it again after every loading screen.
+
+If you have the full tracking list switched on (`/console minimapTrackingShowAll 1`), the game already lists both entries and the addon does nothing.
 
 ![Tracking menu](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/refs/heads/main/media/gallery/02-menu.jpg)
 
 ![Saved per character](https://raw.githubusercontent.com/svengabr/ForeverMinimapTarget/refs/heads/main/media/gallery/03-saved.jpg)
 
-## Install
+## About me
 
-1. Download the latest release zip.
-2. Extract it so you have `World of Warcraft\_classic_beta_\Interface\AddOns\ForeverMinimapTarget`.
-3. Restart the game or type `/reload`.
+I'm Sven. I've been a software developer for over 20 years, and I write and maintain my World of Warcraft addons in my free time. They are free and open source, and they will stay that way.
+
+Found a bug or have an idea? Open an [issue](https://github.com/svengabr/ForeverMinimapTarget/issues) or send me a DM on [CurseForge](https://www.curseforge.com/members/conoar).
 
 ## Support
 
-The addon is free and always will be. If it made your game a bit nicer, you can [buy me a coffee](https://buymeacoffee.com/conoar).
+The addon is free and always will be. If it made your game a bit nicer, you can [buy me a coffee](https://buymeacoffee.com/conoar) or send something via [PayPal](https://paypal.me/svengabr).

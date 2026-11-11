@@ -28,7 +28,8 @@ behavior, not a bug here.
   `forever`).
 - Commit messages follow Conventional Commits (`feat:`, `fix:`, `chore:` …).
 - The README is also the **CurseForge project description**. After README changes, remind the maintainer to paste
-  it there by hand.
+  it there by hand. Leave out the title, the logo and the gallery images there: the CurseForge page already shows
+  them above the description.
 
 ## Checks
 
