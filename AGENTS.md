@@ -14,7 +14,8 @@ looked up by `filterID` (the tracking index differs per class). Checkboxes show 
 `C_Minimap.GetTrackingInfo`. The game does not keep Target on across a relog (observed in the client), so the
 wanted state is saved in `ForeverMinimapTargetCharDB` (SavedVariablesPerCharacter; Target defaults to on, Focus is
 only touched once the player ticks it) and applied on every `PLAYER_ENTERING_WORLD` and again 3 s later. With
-`minimapTrackingShowAll` on, the addon adds nothing and enforces nothing. Everything lives in `ForeverMinimapTarget.lua`;
+`minimapTrackingShowAll` on, the addon adds nothing and enforces nothing. Everything lives in `ForeverMinimapTarget.lua`,
+except the line in the tooltips of the creator's characters (`CreatorTooltip.lua`, characters listed by GUID);
 the addon list icon is `Icon.tga` (64×64, scaled down from `media/logo.png`).
 
 Note: Blizzard's "Uncheck all" re-enables the Target filter (it is in `CONDITIONAL_FILTERS`). That is Blizzard

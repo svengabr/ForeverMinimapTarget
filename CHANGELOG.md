@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+- The addon's creator has a "Forever Minimap Target Creator" line in the tooltip.
+
 ## 1.0.1
 
 - Addon icon in the addon list.

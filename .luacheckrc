@@ -14,5 +14,10 @@ read_globals = {
   "C_Timer",
   "CreateFrame",
   "Enum",
+  "GameTooltip",
+  "issecrettable",
+  "issecretvalue",
   "Menu",
+  "TooltipDataProcessor",
+  "UnitGUID",
 }

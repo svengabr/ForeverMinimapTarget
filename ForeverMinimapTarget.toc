@@ -14,3 +14,4 @@
 ## X-Curse-Project-ID: 1730554
 
 ForeverMinimapTarget.lua
+CreatorTooltip.lua
